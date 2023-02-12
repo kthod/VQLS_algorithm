@@ -66,7 +66,7 @@ to construct rapid and efficient algorithms. The existing classical algorithms, 
 complexity with respect to number of unknowns variables (and therefore, the number of equations). However, in 
 quantum Computing the suggested HHL algorithm achieves logarithmical escalation, by attempting to prepare a quantum state
 $\ket{x}$ which is proportional to the actual solution vector $\bf x$ that satisfies the equation $\bf Ax=b$.
-Although the HHL algorithm can provide an exponential speedup and  seems like a major improvement over the classical ones, it still remains a future project due to 
+Although the HHL algorithm can provide an exponential speedup and  seems like a major improvement over the classical ones, it ca not be performed on NISQ quantum computers due to 
 to its very demanding implementation. In order to treat the problem with the available hardware, an other hybrid Quantum-classical 
 algorithm has been introduced, the {\bf Variational Quantum Linear Solver}. The VQLS manages to be less vulnerable to noise, by using a short-depth quantum circuit,
 exclusivly for evaluating a cost function. The classical part of the algorithm is the optimizer which is used to minimize the aforementioned cost function.
