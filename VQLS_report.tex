@@ -74,7 +74,7 @@ exclusivly for evaluating a cost function. The classical part of the algorithm i
 \rule{\textwidth}{.5pt}}\\
 \section*{{\bf Description of the VQLS algorithm}}
 
-We are given a matrix ${\bf A} \in \mathbb{C}^{n\times n}$ and a complex vector ${\bf b} \in \mathbb{C}^n $.
+We are given a matrix ${\bf A} \in \mathbb{C}^{N\times N}$ and a complex vector ${\bf b} \in \mathbb{C}^N $.
  The goal is to determine a state $\ket{x}$ such that ${\bf A}\ket{x}$ is proportional to ${\bf b}$, or equivalently:
 $$\ket{\boldsymbol \psi} := \frac{{\bf A}\ket{x}}{\bra{x}{\bf A}^\dag {\bf A}\ket{x}} \approx \ket{b} $$
 where $\ket{b}$ is normalized vector, proportional to $\bf b$, in a quantum state form. 
@@ -407,7 +407,7 @@ would reduce the number of effective parameters ($a_3$ and $a_7$ would count as 
    
     \caption{
         \justifying
-        Linear entanglement ansatz implemented in qiskit with 9 effective parameters (all initialized at 1) and 4 CNOTs gates.}
+        Linear entanglement ansatz implemented in qiskit with 9 effective parameters (all initialized at 1) and 4 CNOTs gates. Since $\bf A$ and $\ket{b}$ are real, only rotation around the y-axis is required}
 \end{figure}
 
 For the cost function we use the global cost function and the terms $\gamma_{ll'}$ are evaluated with the second method that was described above (Figure 7 $(b)$).
@@ -437,7 +437,7 @@ Note how in the last circuit, $U$ and $V({\boldsymbol{ \alpha}})$ are also contr
  $$ C_G = 1 - \frac{\sum_{l = 1}^{L}\sum_{l' = 1}^{L}c_{l'} c_l^* \gamma_{ll'}}
  {\sum_{l = 1}^{L}\sum_{l' = 1}^{L}c_{l'} c_l^* \beta_{ll'}} $$\\
 Our goal is to minimize it until it reaches the value $0$. To do so we employ the COBYLA optimizer which is gradient-free. Since we used the global cost function, a gradient-free optimizer 
-is convinient because it is less impacted by barren plateaus. The final result of the optimization process is the following:\\ \\ \\ \\  
+is convinient because it is less impacted by barren plateaus. The final result of the optimization process is the following:\\ \\ \\  
 \begin{verbatim}
       fun: 0.00012637933571213456
     maxcv: 0.0
