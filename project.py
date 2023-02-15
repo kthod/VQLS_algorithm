@@ -6,6 +6,7 @@ import random
 import numpy as np
 import time
 from cost_function import *
+from circuits import *
 from scipy.optimize import minimize
 
 
